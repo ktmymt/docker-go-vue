@@ -1,1 +1,1 @@
-### setup (docker × go × vue × nginx) environment
+### setup Docker×Go×Vue×Nginx environment

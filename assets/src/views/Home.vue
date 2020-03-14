@@ -13,6 +13,12 @@ export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  created() {
+    this.$axios.get('http://localhost/api')
+      .then(response => {
+        console.log(response);
+      });
   }
 };
 </script>

@@ -5,3 +5,5 @@ ENV GO111MODULE=on
 RUN apk update && \
   apk add vim curl git && \
   go get github.com/pilu/fresh
+
+CMD [ "fresh" ]

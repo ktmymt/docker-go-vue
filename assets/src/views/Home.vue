@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld :msg="msg" />
   </div>
 </template>
 
@@ -14,11 +14,21 @@ export default {
   components: {
     HelloWorld
   },
+  data() {
+    return {
+      msg: ''
+    }
+  },
+  methods: {
+    getMessage() {
+      this.$axios.get('http://localhost/api')
+        .then(response => {
+          this.msg = response.data.message
+        })
+    }
+  },
   created() {
-    this.$axios.get('http://localhost/api')
-      .then(response => {
-        console.log(response);
-      });
+    this.getMessage()
   }
 };
 </script>
